@@ -1,0 +1,24 @@
+{
+  "name": "seajs-wrap-m",
+  "version": "1.0.0",
+  "description": "seajs-wrap with no bug",
+  "keywords": [],
+  "homepage": "",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Max/seajs-wrap-m.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": "MIT",
+  "spm": {
+    "main": "index.js",
+    "dependencies": {
+    },
+    "devDependencies": {
+      "expect.js": "0.3.1"
+    }
+  }
+}

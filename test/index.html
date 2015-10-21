@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../node_modules/jquery/tmp/jquery.js"></script>
+  <script src="../node_modules/expect.js/index.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script>mocha.setup('bdd');</script>
+
+  <script src="const.js"></script>
+  <script src="utils.js"></script>
+
+  <script src="sea-modules/seajs/2.3.0/dist/sea.js"></script>
+  <script src="sea-modules/seajs-text/1.1.0/dist/seajs-text-debug.js"></script>
+  <script src="sea-modules/seajs-wrap/1.0.1/dist/seajs-wrap-debug.js"></script>
+  <script>
+    seajs.config({
+        base: '/test/'
+    });
+    seajs.use('scaffold', function(page) {
+        page.init();
+    });
+  </script>
+
+  <script src="http.js"></script>
+  <script src="imm-client.js"></script>
+  <script>
+    var action = function() {
+        mocha.ui('bdd');
+        mocha.reporter('html');
+        mocha.run();
+    };
+    setTimeout(action, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "imm-client",
+  "version": "0.2.2",
+  "description": "Browser Side JS Module for IMM",
+  "keywords": [
+      "IMM"
+  ],
+  "homepage": "",
+  "author": "Max <max@vzhibo.tv>",
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/maxlee1994/IMM.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": "MIT",
+  "spm": {
+    "main": "src/imm.js",
+    "dependencies": {
+    },
+    "devDependencies": {
+      "expect.js": "0.3.1"
+    },
+    "engines": {
+      "seajs": "2.3.0"
+    },
+    "tests": "tests/*.js"
+  }
+}

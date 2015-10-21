@@ -1,0 +1,7 @@
+# IMM:
+log
+conf
+node_modules
+
+# mac:
+.DS_Store
