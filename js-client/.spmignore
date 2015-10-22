@@ -1,0 +1,3 @@
+src/fb-common
+node_modules
+.jshintrc

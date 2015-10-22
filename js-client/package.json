@@ -3,28 +3,19 @@
   "version": "0.2.2",
   "description": "Browser Side JS Module for IMM",
   "keywords": [
-      "IMM"
+    "IMM"
   ],
-  "homepage": "",
-  "author": "Max <max@vzhibo.tv>",
+  "main": "dist/imm.js",
+  "author": "Max <liyue4158@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://git.oschina.net/maxlee1994/IMM.git"
   },
-  "bugs": {
-    "url": ""
+  "dependencies": {
+    "sockjs-client": "^1.0.3"
   },
-  "licenses": "MIT",
-  "spm": {
-    "main": "src/imm.js",
-    "dependencies": {
-    },
-    "devDependencies": {
-      "expect.js": "0.3.1"
-    },
-    "engines": {
-      "seajs": "2.3.0"
-    },
-    "tests": "tests/*.js"
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.3.0"
   }
 }

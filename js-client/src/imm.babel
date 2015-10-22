@@ -1,14 +1,10 @@
 /**
  * @fileOverview 封装SockJS客户端方法，提供适应IMM的更加健壮、简洁的管理
- * @require SockJS?ver=0.3
  * @author Max
- * created at Thu Jun 05 2014 09:59:58 GMT+0800 (CST)
  */
 
-
-
-    var SockJS = require('./sockjs-0.3');
-    var enumCommon = require('./fb-common/enum/common');
+    import SockJS from 'sockjs-client';
+    import enumCommon from './enum';
 
     // private
     var url, channel, userinfo;
@@ -27,13 +23,13 @@
     var realOnlineCount = 0;
     var CHECK_ONLINE_COUNT_INTERVAL = 30 * 1000;
 
-    var init = function(urlParam, channelParam) {
+    export const init = (urlParam, channelParam) => {
         url = urlParam;
         channel = channelParam;
     };
 
     // call `setUpConnection` before send
-    var setUpConnection = function (user){
+    export const setUpConnection = (user) => {
         if(sockJS) {
             console.warn('connection already set up!');
             return;
@@ -51,7 +47,7 @@
         }
     };
 
-    var registerMsgHandler = function(callback){
+    export const registerMsgHandler = (callback) => {
         if(!url || !channel) {
             console.error('imm-client is not initialized!');
             return;
@@ -63,7 +59,7 @@
         return key;
     };
 
-    var registerOnlineCountHandler = function(callback) {
+    export const registerOnlineCountHandler = (callback) => {
         if(!url || !channel) {
             console.error('imm-client is not initialized!');
             return;
@@ -75,7 +71,7 @@
 
         return key;
     };
-    var registerRealOnlineCountHandler = function(callback) {
+    export const registerRealOnlineCountHandler = (callback) => {
         if(!url || !channel) {
             console.error('imm-client is not initialized!');
             return;
@@ -88,7 +84,7 @@
         return key;
     };
 
-    var registerActionHandler = function(handler) {
+    export const registerActionHandler = (handler) => {
         if(!url || !channel) {
             console.error('imm-client is not initialized!');
             return;
@@ -100,7 +96,7 @@
         return key;
     };
 
-    var unregisterHandler = function(key) {
+    export const unregisterHandler = (key) => {
 
         delete msgHandlers[key];
         delete onlineCountHandlers[key];
@@ -274,12 +270,3 @@
 
         return key;
     }
-
-
-exports.init = init;
-exports.setUpConnection = setUpConnection;
-exports.registerMsgHandler = registerMsgHandler;
-exports.registerOnlineCountHandler = registerOnlineCountHandler;
-exports.registerRealOnlineCountHandler = registerRealOnlineCountHandler;
-exports.registerActionHandler = registerActionHandler;
-exports.unregisterHandler = unregisterHandler;
